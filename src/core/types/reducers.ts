@@ -1,33 +1,39 @@
-export type PasswordType = {
+/**
+ * @description Password types
+ */
+export declare type Password = {
+  token: string | number;
   name: string;
-  token?: string | number;
-  email?: string;
-  password?: string;
-  tagId?: number | string;
   description?: string;
   username?: string;
+  email: string;
+  password: string;
   url?: string;
+  tagId: number | string;
 };
 
-export type PasswordState = {
-  passwords: PasswordType[];
+export declare type PasswordState = {
+  passwords: Password[];
 };
 
-/**============ */
-
-export type Tag = {
+/**
+ * @description Tags types
+ */
+export declare type Tag = {
   id: number | string;
   name: string;
   icon: string;
 };
 
-export type TagState = {
+export declare type TagState = {
   selectedTag: Tag;
   tags: Tag[];
 };
 
-/**=========== */
-export type Notification = {
+/**
+ * @description Notification types
+ */
+export declare type Notification = {
   type: "error" | "success" | "warning";
   message: string;
   descripton?: string;
@@ -35,23 +41,34 @@ export type Notification = {
   isClosable?: boolean;
 };
 
-export type NotificationState = {
+export declare type NotificationState = {
   notifications: Notification[];
 };
 
-/**=========== */
-export type SearchState = {
+/**
+ * @description Search types
+ */
+export declare type SearchState = {
   search: string;
 };
 
-export type SidebarState = {
+/**
+ * @description Sidebar types
+ */
+export declare type SidebarState = {
   showSidebar: Boolean;
 };
 
-export type UserState = {
+/**
+ * @description User types
+ */
+export declare type UserState = {
   hasAccess: Boolean;
 };
 
-export type UserPasswordState = {
+/**
+ * @description User password types
+ */
+export declare type UserPasswordState = {
   password: String | null;
 };
