@@ -2,7 +2,6 @@ import { combineReducers, createStore, compose } from "redux";
 import { persistStore, persistReducer } from "redux-persist";
 import { encryptTransform } from "redux-persist-transform-encrypt";
 import storage from "redux-persist/lib/storage";
-
 import { notificationReducer } from "../reducers/notifications.reducer";
 import { passwordReducer } from "../reducers/passwords.reducer";
 import { searchReducer } from "../reducers/search.reducer";

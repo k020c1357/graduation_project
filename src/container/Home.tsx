@@ -1,12 +1,12 @@
 import * as React from "react";
 import { Layout } from "./Layout";
-import { NotificationState, UserState } from "../../core/types/reducers";
+import { NotificationState, UserState } from "../core/types/reducers";
 import { connect } from "react-redux";
-import { useNotification } from "../../hooks/useNotification";
-import { PasswordDatatableComponent } from "../../components/PasswordDatatable";
-import { ActionsHeaderComponent } from "../../components/ActionsHeader";
-import { AuthComponent } from "../../components/Auth";
-import { useUserAccess } from "../../hooks/useAccess";
+import { useNotification } from "../hooks/useNotification";
+import { PasswordDatatableComponent } from "../components/PasswordDatatable";
+import { ActionsHeaderComponent } from "../components/ActionsHeader";
+import { AuthComponent } from "../components/Auth";
+import { useUserAccess } from "../hooks/useAccess";
 
 type Props = {
   NOTIFICATIONS_STATE: NotificationState;
@@ -34,7 +34,7 @@ function HomePage({ NOTIFICATIONS_STATE, USER_STATE }: Props) {
   return (
     <>
       {USER_STATE.hasAccess ? (
-        <HomeLayout>
+        <Layout>
           <>
             <ActionsHeaderComponent
               setSelectedPassword={setSelectedPassword}
@@ -48,7 +48,7 @@ function HomePage({ NOTIFICATIONS_STATE, USER_STATE }: Props) {
               setSelectedPassword={setSelectedPassword}
             />
           </>
-        </HomeLayout>
+        </Layout>
       ) : (
         <AuthComponent />
       )}

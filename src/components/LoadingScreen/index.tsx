@@ -1,11 +1,24 @@
-import tw from "twin.macro";
+import { Box, Text } from "@chakra-ui/react";
 
-export const LoadingScreen = () => {
+export const LoadingScreenComponent = () => {
   return (
-    <div tw="h-full min-h-full w-full min-w-full flex justify-center items-center">
-      <p tw="text-lg text-gray-300 text-center font-bold">
-        Loading your data...
-      </p>
-    </div>
+    <Box
+      height="100vh"
+      minHeight="100vh"
+      width="100vw"
+      minWidth="100vw"
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+    >
+      <Text
+        fontSize="9xl"
+        color="gray.300"
+        textAlign="center"
+        fontWeight="bold"
+      >
+        Loading your data
+      </Text>
+    </Box>
   );
 };
