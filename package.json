@@ -5,7 +5,6 @@
     "type": "git",
     "url": "git@github-secondary.com:k020c1357/graduation_project.git"
   },
-  "license": "ISC",
   "dependencies": {
     "@chakra-ui/react": "^1.7.4",
     "@reduxjs/toolkit": "^1.7.1",

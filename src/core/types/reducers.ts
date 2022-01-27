@@ -34,7 +34,7 @@ export declare type TagState = {
  * @description Notification types
  */
 export declare type Notification = {
-  type: "error" | "success" | "warning";
+  type: 'error' | 'success' | 'warning';
   message: string;
   descripton?: string;
   duration?: number;
@@ -70,5 +70,5 @@ export declare type UserState = {
  * @description User password types
  */
 export declare type UserPasswordState = {
-  password: String | null;
+  password: string | null;
 };
