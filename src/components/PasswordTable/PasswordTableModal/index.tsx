@@ -1,5 +1,3 @@
-import React from 'react';
-
 import {
   Modal,
   ModalOverlay,
@@ -14,10 +12,10 @@ import { Password } from '../../../core/types/reducers';
 import PasswordTableModalItemComponent from '../PasswordTableModalItem';
 import useClipboard from '../../../hooks/useClipboard';
 
-declare type Props = {
+type Props = {
   handleClose: () => void;
   password: Password;
-}
+};
 
 export default function PasswordTableModalComponent({ handleClose, password }: Props) {
   const { handleClipboard } = useClipboard();
@@ -26,43 +24,52 @@ export default function PasswordTableModalComponent({ handleClose, password }: P
     <Modal isOpen={true} onClose={handleClose}>
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader display="flex">
-          <Box my="auto" mr={3}>
+        <ModalHeader display='flex'>
+          <Box my='auto' mr={3}>
             <img
-              loading="lazy"
-              src={`http://www.google.com/s2/favicons?domain=${password.url || 'http://github.com/'}`}
+              loading='lazy'
+              src={`http://www.google.com/s2/favicons?domain=${
+                password.url || 'http://github.com/'
+              }`}
               alt={password.name}
-              width="20px" />
+              width='20px'
+            />
           </Box>
-          <Text my="auto" textTransform="capitalize">{password.name}</Text>
+          <Text my='auto' textTransform='capitalize'>
+            {password.name}
+          </Text>
         </ModalHeader>
         <ModalCloseButton />
         <ModalBody>
           <Box mb={3}>
-            <Text color="gray.500">
+            <Text color='gray.500'>
               {password.description ? password.description : 'No description here. '}
             </Text>
           </Box>
 
           <PasswordTableModalItemComponent
-            fieldType="Email"
+            fieldType='Email'
             handleClipboard={handleClipboard}
-            fieldValue={password.email} />
+            fieldValue={password.email}
+          />
 
           <PasswordTableModalItemComponent
-            fieldType="Username"
+            fieldType='Username'
             handleClipboard={handleClipboard}
-            fieldValue={password.username} />
+            fieldValue={password.username}
+          />
 
           <PasswordTableModalItemComponent
-            fieldType="Password"
+            fieldType='Password'
             handleClipboard={handleClipboard}
-            fieldValue={password.password} />
+            fieldValue={password.password}
+          />
 
           <PasswordTableModalItemComponent
-            fieldType="URL"
+            fieldType='URL'
             handleClipboard={handleClipboard}
-            fieldValue={password.url} />
+            fieldValue={password.url}
+          />
         </ModalBody>
       </ModalContent>
     </Modal>

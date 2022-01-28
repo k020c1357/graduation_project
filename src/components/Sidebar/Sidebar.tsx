@@ -1,4 +1,4 @@
-import React, { useState, useEffect, SetStateAction } from 'react';
+import * as React from 'react';
 import { SidebarTagsGroupComponent } from './SidebarTagsGroup';
 import { Box, Button, Text } from '@chakra-ui/react';
 import { SidebarButton } from './SidebarButton';
@@ -10,74 +10,75 @@ import { toggleSidebar } from '../../core/store/actions/sidebar';
 
 declare type Props = {
   className: string;
-}
+};
 
 export function SidebarComponent({ className }: Props) {
   const dispatch = useDispatch();
 
-  const [showConfigModal, setShowConfigModal] = useState(false);
-  const [showModal, setShowModal] = useState(false);
-  const [tagEditSelected, setTagEditSelected] = useState(null);
+  const [showConfigModal, setShowConfigModal] = React.useState(false);
+  const [showModal, setShowModal] = React.useState(false);
+  const [tagEditSelected, setTagEditSelected] = React.useState(null);
 
   const handleTagEditSelected = (tag: any) => setTagEditSelected(tag);
   const handleSetModal = () => setShowModal(true);
 
-  const handleSetConfigModal = (value: SetStateAction<boolean> = false) => setShowConfigModal(value);
+  const handleSetConfigModal = (value: React.SetStateAction<boolean> = false) =>
+    setShowConfigModal(value);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (tagEditSelected) setShowModal(true);
   }, [tagEditSelected]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (!showModal) setTagEditSelected(null);
   }, [showModal]);
 
   return (
-    <Box
-      className={className}
-      bgColor="teal.700">
-
-      <Box width="100%" minWidth="100%" pr={3} pt={3}>
+    <Box className={className} bgColor='teal.700'>
+      <Box width='100%' minWidth='100%' pr={3} pt={3}>
         <Button
-          className="responsive-sidebar-close-button"
-          variant="outline"
-          colorScheme="whiteAlpha"
-          size="sm"
-          ml="auto"
-          onClick={() => dispatch(toggleSidebar())}>
-          <Text fontWeight="bold" color="white">Close menu</Text>
+          className='responsive-sidebar-close-button'
+          variant='outline'
+          colorScheme='whiteAlpha'
+          size='sm'
+          ml='auto'
+          onClick={() => dispatch(toggleSidebar())}
+        >
+          <Text fontWeight='bold' color='white'>
+            Close menu
+          </Text>
         </Button>
       </Box>
 
-      <Box px={4} className="head-text">
-        <Text color="white" fontSize="5xl" fontWeight="bold">Locky</Text>
-        <Text color="whiteAlpha.700" fontSize="1xl">Save your credentials</Text>
-        <Text color="whiteAlpha.600" fontSize="xs" >Version: {appVersion}</Text>
+      <Box px={4} className='head-text'>
+        <Text color='white' fontSize='3xl' fontWeight='medium'>
+          パスワード保管庫
+        </Text>
+        <Text color='whiteAlpha.700' fontSize='1xl'>
+          Save credentials
+        </Text>
       </Box>
 
-      <hr className="app-divider"/>
+      <hr className='app-divider' />
 
-      <Box display="flex" justifyContent="space-between" flexDirection="column">
-        <Box className="top">
-          <SidebarTagsGroupComponent
-            handleTagEditSelected={handleTagEditSelected}/>
+      <Box display='flex' justifyContent='space-between' flexDirection='column'>
+        <Box className='top'>
+          <SidebarTagsGroupComponent handleTagEditSelected={handleTagEditSelected} />
 
-          <SidebarButton
-            handleClick={handleSetModal}
-            title="Create a new tag" />
+          <SidebarButton handleClick={handleSetModal} title='新しいタグを作成する' />
 
-          <SidebarButton
-            handleClick={handleSetConfigModal}
-            title="Configuration" />
+          <SidebarButton handleClick={handleSetConfigModal} title='設定' />
 
-          { showModal && <SidebarTagsCreationModalComponent
-            setShowModal={setShowModal}
-            tagEditSelected={tagEditSelected} />
-          }
+          {showModal && (
+            <SidebarTagsCreationModalComponent
+              setShowModal={setShowModal}
+              tagEditSelected={tagEditSelected}
+            />
+          )}
 
-          { showConfigModal && <SettingsModalComponent
-            handleSetConfigModal={handleSetConfigModal} />
-          }
+          {showConfigModal && (
+            <SettingsModalComponent handleSetConfigModal={handleSetConfigModal} />
+          )}
         </Box>
       </Box>
     </Box>

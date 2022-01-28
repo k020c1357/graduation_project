@@ -1,18 +1,9 @@
-import React from 'react';
-
-import {
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalBody,
-  Button,
-  Box,
-} from '@chakra-ui/react';
+import { Modal, ModalOverlay, ModalContent, ModalBody, Button, Box } from '@chakra-ui/react';
 import { SettingsModalContentComponent } from './SettingsModalContent';
 
-declare type Props ={
+type Props = {
   handleSetConfigModal: Function;
-}
+};
 
 export function SettingsModalComponent({ handleSetConfigModal }: Props) {
   const handleClose = () => {
@@ -30,16 +21,8 @@ export function SettingsModalComponent({ handleSetConfigModal }: Props) {
         <ModalBody p={0}>
           <SettingsModalContentComponent />
 
-          <Box
-            width="100%"
-            minWidth="100%"
-            textAlign="right"
-            px={3} pb={3}>
-
-            <Button
-              display="inline-block"
-              background="ghost"
-              onClick={handleClose}>
+          <Box width='100%' minWidth='100%' textAlign='right' px={3} pb={3}>
+            <Button display='inline-block' background='ghost' onClick={handleClose}>
               Close settings
             </Button>
           </Box>
