@@ -3,7 +3,7 @@ import { useUserAccess } from '../../hooks/useAccess';
 import { PrompModalComponent } from '../PromptModal';
 import { AccessDeniedComponent } from './AccessDenied';
 
-export function AuthComponent() {
+export const Auth = () => {
   const [showPasswordCreationModal, setShowPasswordCreationModal] = React.useState(false);
   const [showCheckAccessModal, setShowCheckAccessModal] = React.useState(false);
   const [accessDenied, setAccessDenied] = React.useState(false);
@@ -60,4 +60,4 @@ export function AuthComponent() {
       {accessDenied && <AccessDeniedComponent />}
     </>
   );
-}
+};

@@ -101,7 +101,7 @@ export function PasswordCreationModalComponent({
       <ModalOverlay />
       <ModalContent maxWidth={800} w='100%'>
         <ModalHeader>{passwordSelected ? 'Entry editing' : 'Create a new entry'}</ModalHeader>
-        <ModalCloseButton color='teal.700' />
+        <ModalCloseButton color='purple.700' />
 
         <ModalBody onKeyDown={(e) => handleEnter(e)}>
           <Box display='flex' flexDirection={`${!isLargerThan800 ? 'column' : 'row'}`}>
@@ -111,7 +111,7 @@ export function PasswordCreationModalComponent({
               </FormLabel>
 
               <Input
-                focusBorderColor='teal.700'
+                focusBorderColor='purple.700'
                 placeholder='Twitter password'
                 type='text'
                 id='name'
@@ -126,7 +126,7 @@ export function PasswordCreationModalComponent({
               </FormLabel>
 
               <Input
-                focusBorderColor='teal.700'
+                focusBorderColor='purple.700'
                 placeholder='Username'
                 type='text'
                 id='username'
@@ -143,7 +143,7 @@ export function PasswordCreationModalComponent({
               </FormLabel>
 
               <Input
-                focusBorderColor='teal.700'
+                focusBorderColor='purple.700'
                 placeholder='email@domain.com'
                 type='text'
                 id='email'
@@ -159,7 +159,7 @@ export function PasswordCreationModalComponent({
 
               <InputGroup size='md'>
                 <Input
-                  focusBorderColor='teal.700'
+                  focusBorderColor='purple.700'
                   type={showPassword ? 'text' : 'password'}
                   placeholder='Enter password'
                   value={password}
@@ -168,7 +168,7 @@ export function PasswordCreationModalComponent({
                 />
                 <InputRightElement width='4.5rem'>
                   <Button
-                    _focus={{ borderColor: 'teal.700' }}
+                    _focus={{ borderColor: 'purple.700' }}
                     h='1.75rem'
                     size='sm'
                     onClick={() => setShowPassword((password: boolean) => !password)}
@@ -207,7 +207,7 @@ export function PasswordCreationModalComponent({
               </FormLabel>
 
               <Input
-                focusBorderColor='teal.700'
+                focusBorderColor='purple.700'
                 placeholder='https://twitter.com/'
                 type='text'
                 id='url'
@@ -223,7 +223,7 @@ export function PasswordCreationModalComponent({
             </FormLabel>
 
             <Textarea
-              focusBorderColor='teal.700'
+              focusBorderColor='purple.700'
               placeholder='Entry description'
               id='description'
               onChange={(e) => setDescription(e.target.value)}
@@ -233,7 +233,7 @@ export function PasswordCreationModalComponent({
         </ModalBody>
 
         <ModalFooter>
-          <Button variant='ghost' color='teal.700' mr={3} onClick={onClose}>
+          <Button variant='ghost' color='purple.700' mr={3} onClick={onClose}>
             Close
           </Button>
 
@@ -241,7 +241,7 @@ export function PasswordCreationModalComponent({
             isDisabled={name !== '' && password !== '' ? false : true}
             onClick={handleSubmit}
             variant='solid'
-            bgColor='teal.700'
+            bgColor='purple.700'
             color='white'
           >
             Save changes

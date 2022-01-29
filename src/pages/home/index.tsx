@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { HomeLayout } from '../../layouts/HomeLayout';
-import { NotificationState, UserState } from '../../core/types/reducers';
+import { Layout } from '../../layouts/Layout';
+import type { NotificationState, UserState } from '../../core/types/reducers';
 import { connect } from 'react-redux';
 import { useNotification } from '../../hooks/useNotification';
-import { PasswordDatatableComponent } from '../../components/PasswordDatatable';
-import { ActionsHeaderComponent } from '../../components/ActionsHeader';
-import { AuthComponent } from '../../components/Auth';
+import { PasswordDatatableComponent as PasswordDatatable } from '../../components/PasswordDatatable';
+import { ActionsHeaderComponent as ActionsHeader } from '../../components/ActionsHeader';
+import { Auth } from '../../components/Auth';
 import { useUserAccess } from '../../hooks/useAccess';
 
 type Props = {
@@ -33,23 +33,23 @@ function HomePage({ NOTIFICATIONS_STATE, USER_STATE }: Props) {
   return (
     <>
       {USER_STATE.hasAccess ? (
-        <HomeLayout>
+        <Layout>
           <>
-            <ActionsHeaderComponent
+            <ActionsHeader
               setSelectedPassword={setSelectedPassword}
               showModal={showModal}
               setShowModal={setShowModal}
               selectedPassword={selectedPassword}
             />
 
-            <PasswordDatatableComponent
+            <PasswordDatatable
               setShowModal={setShowModal}
               setSelectedPassword={setSelectedPassword}
             />
           </>
-        </HomeLayout>
+        </Layout>
       ) : (
-        <AuthComponent />
+        <Auth />
       )}
     </>
   );

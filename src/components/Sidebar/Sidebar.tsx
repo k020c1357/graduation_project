@@ -8,11 +8,11 @@ import { appVersion } from '../../core/types/commons';
 import { useDispatch } from 'react-redux';
 import { toggleSidebar } from '../../core/store/actions/sidebar';
 
-declare type Props = {
+type Props = {
   className: string;
 };
 
-export function SidebarComponent({ className }: Props) {
+export const Sidebar = ({ className }: Props) => {
   const dispatch = useDispatch();
 
   const [showConfigModal, setShowConfigModal] = React.useState(false);
@@ -34,7 +34,7 @@ export function SidebarComponent({ className }: Props) {
   }, [showModal]);
 
   return (
-    <Box className={className} bgColor='teal.700'>
+    <Box className={className} bgColor='purple.700'>
       <Box width='100%' minWidth='100%' pr={3} pt={3}>
         <Button
           className='responsive-sidebar-close-button'
@@ -44,38 +44,33 @@ export function SidebarComponent({ className }: Props) {
           ml='auto'
           onClick={() => dispatch(toggleSidebar())}
         >
-          <Text fontWeight='bold' color='white'>
-            Close menu
+          <Text fontWeight='medium' color='white'>
+            閉じる
           </Text>
         </Button>
       </Box>
 
-      <Box px={4} className='head-text'>
+      <Box px={8} pt={6} className='head-text' textAlign='center'>
         <Text color='white' fontSize='3xl' fontWeight='medium'>
           パスワード保管庫
-        </Text>
-        <Text color='whiteAlpha.700' fontSize='1xl'>
-          Save credentials
         </Text>
       </Box>
 
       <hr className='app-divider' />
 
-      <Box display='flex' justifyContent='space-between' flexDirection='column'>
-        <Box className='top'>
+      <Box display='flex' justifyContent='space-between' flexDirection='column' minHeight='80vh'>
+        <Box>
           <SidebarTagsGroupComponent handleTagEditSelected={handleTagEditSelected} />
-
+        </Box>
+        <Box>
           <SidebarButton handleClick={handleSetModal} title='新しいタグを作成する' />
-
           <SidebarButton handleClick={handleSetConfigModal} title='設定' />
-
           {showModal && (
             <SidebarTagsCreationModalComponent
               setShowModal={setShowModal}
               tagEditSelected={tagEditSelected}
             />
           )}
-
           {showConfigModal && (
             <SettingsModalComponent handleSetConfigModal={handleSetConfigModal} />
           )}
@@ -83,4 +78,4 @@ export function SidebarComponent({ className }: Props) {
       </Box>
     </Box>
   );
-}
+};

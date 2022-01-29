@@ -68,7 +68,7 @@ export function PrompModalComponent({
               ref={inputRef}
               style={inputWrong ? { borderWidth: 2, borderColor: 'red' } : {}}
               type={inputType}
-              focusBorderColor={inputWrong ? 'none' : 'teal.700'}
+              focusBorderColor={inputWrong ? 'none' : 'purple.700'}
               onChange={(e) => setValue(e.target.value)}
               placeholder='abcde12345'
             />
@@ -86,7 +86,7 @@ export function PrompModalComponent({
             disabled={value.length < 1 ? true : false}
             onClick={() => onAccept(value)}
             color='white'
-            background='teal.700'
+            background='purple.700'
             mr={3}
           >
             Continue

@@ -54,7 +54,7 @@ export function SettingsModalUserComponent() {
             <Text>Current password</Text>
             <Input
               style={passwordMismatch ? { borderWidth: 2, borderColor: 'red' } : {}}
-              focusBorderColor={passwordMismatch ? 'none' : 'teal.700'}
+              focusBorderColor={passwordMismatch ? 'none' : 'purple.700'}
               onChange={(e) => setPassword(e.target.value)}
               autoComplete='off'
               type='password'
@@ -68,7 +68,7 @@ export function SettingsModalUserComponent() {
             <Text>New password</Text>
             <Input
               style={passwordMismatch ? { borderWidth: 2, borderColor: 'red' } : {}}
-              focusBorderColor={passwordMismatch ? 'none' : 'teal.700'}
+              focusBorderColor={passwordMismatch ? 'none' : 'purple.700'}
               onChange={(e) => setNewPassword(e.target.value)}
               value={newPassword}
               autoComplete='off'

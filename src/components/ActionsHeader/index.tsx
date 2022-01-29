@@ -20,13 +20,13 @@ type Props = {
   setShowModal: (state: boolean) => void;
 };
 
-function ActionsHeader({
+const ActionsHeader = ({
   TAG_STATE,
   selectedPassword,
   showModal,
   setShowModal,
   setSelectedPassword,
-}: Props) {
+}: Props) => {
   const dispatch = useDispatch();
   const [search, setSearch] = React.useState('');
 
@@ -50,7 +50,7 @@ function ActionsHeader({
         <Box display='flex' mb={3}>
           <Button
             mr={4}
-            color='teal.700'
+            color='purple.700'
             variant='outline'
             colorScheme='teal'
             _focus={{ outline: 'none' }}
@@ -76,7 +76,7 @@ function ActionsHeader({
 
           <Button
             variant='outline'
-            color='teal.700'
+            color='purple.700'
             colorScheme='teal'
             _focus={{ outline: 'none' }}
             maxWidth={70}
@@ -122,6 +122,6 @@ function ActionsHeader({
       />
     </>
   );
-}
+};
 
 export const ActionsHeaderComponent = connect(mapStateToProps)(ActionsHeader);

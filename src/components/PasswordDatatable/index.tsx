@@ -1,4 +1,4 @@
-import { PasswordState, TagState } from '../../core/types/reducers';
+import type { PasswordState, TagState } from '../../core/types/reducers';
 import { connect } from 'react-redux';
 import { PasswordTableComponent } from '../PasswordTable/PasswordTable';
 import { PasswordTableEmptyComponent } from '../PasswordTable/PasswordTableEmpty';
@@ -17,12 +17,12 @@ type Props = {
   setShowModal: (state: boolean) => void;
 };
 
-function PasswordDatatable({
+const PasswordDatatable = ({
   TAG_STATE,
   PASSWORD_STATE,
   setSelectedPassword,
   setShowModal,
-}: Props) {
+}: Props) => {
   return (
     <>
       {PASSWORD_STATE.passwords?.length ? (
@@ -37,6 +37,6 @@ function PasswordDatatable({
       )}
     </>
   );
-}
+};
 
 export const PasswordDatatableComponent = connect(mapStateToProps)(PasswordDatatable);

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Password } from '../../core/types/reducers';
+import type { Password } from '../../core/types/reducers';
 import { Text, Menu, MenuButton, Box, MenuList, MenuItem, useMediaQuery } from '@chakra-ui/react';
 import useClipboard from '../../hooks/useClipboard';
 import { useDispatch, useSelector } from 'react-redux';
@@ -7,7 +7,12 @@ import { deletePassword } from '../../core/store/actions/passwords';
 import { createNotification } from '../../core/store/actions/notifications';
 import { ConfirmActionModalComponent } from '../ConfirmActionModal';
 import PasswordTableModalComponent from './PasswordTableModal';
-import { Props, RenderTableItemsProps, IviewModalItem, IpasswordToDelete } from './definitions';
+import type {
+  Props,
+  RenderTableItemsProps,
+  IviewModalItem,
+  IpasswordToDelete,
+} from './definitions';
 
 function RenderTableItems({
   password,

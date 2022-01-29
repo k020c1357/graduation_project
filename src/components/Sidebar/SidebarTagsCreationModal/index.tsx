@@ -46,7 +46,7 @@ export function SidebarTagsCreationModalComponent({ tagEditSelected, setShowModa
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>{tagEditSelected ? 'Tag editing' : 'Create a new tag'}</ModalHeader>
-        <ModalCloseButton color='teal.700' />
+        <ModalCloseButton color='purple.700' />
 
         <ModalBody>
           <FormControl mb='5' id='name'>
@@ -55,7 +55,7 @@ export function SidebarTagsCreationModalComponent({ tagEditSelected, setShowModa
             </FormLabel>
 
             <Input
-              focusBorderColor='teal.700'
+              focusBorderColor='purple.700'
               placeholder='Social, Job, etc...'
               type='text'
               onChange={(e) => setTagName(e.target.value)}
@@ -73,9 +73,9 @@ export function SidebarTagsCreationModalComponent({ tagEditSelected, setShowModa
                 cursor='pointer'
                 border='2px'
                 borderRadius='md'
-                borderColor='teal.100'
+                borderColor='purple.100'
                 style={{ borderColor: icon === tagIcon ? '#285E61' : '' }}
-                _hover={{ borderColor: 'teal.200' }}
+                _hover={{ borderColor: 'purple.200' }}
                 mx='auto'
                 p={3}
                 key={icon}
@@ -87,7 +87,7 @@ export function SidebarTagsCreationModalComponent({ tagEditSelected, setShowModa
         </ModalBody>
 
         <ModalFooter>
-          <Button variant='ghost' color='teal.700' mr={3} onClick={onClose}>
+          <Button variant='ghost' color='purple.700' mr={3} onClick={onClose}>
             Close
           </Button>
 
@@ -95,7 +95,7 @@ export function SidebarTagsCreationModalComponent({ tagEditSelected, setShowModa
             isDisabled={tagName !== '' && tagIcon !== '' ? false : true}
             onClick={handleSubmit}
             variant='solid'
-            bgColor='teal.700'
+            bgColor='purple.700'
             color='white'
           >
             Save changes

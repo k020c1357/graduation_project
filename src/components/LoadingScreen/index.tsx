@@ -1,6 +1,6 @@
 import { Box, Text } from '@chakra-ui/react';
 
-export function LoadingScreenComponent() {
+export function LoadingScreen() {
   return (
     <Box
       height='100vh'
@@ -11,8 +11,8 @@ export function LoadingScreenComponent() {
       justifyContent='center'
       alignItems='center'
     >
-      <Text fontSize='9xl' color='gray.300' textAlign='center' fontWeight='bold'>
-        Loading your data
+      <Text fontSize='10xl' color='gray.600' textAlign='center' fontWeight='bold' lineHeight={2}>
+        データを読み込み中......
       </Text>
     </Box>
   );

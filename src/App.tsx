@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { ChakraProvider } from '@chakra-ui/react';
-import { LoadingScreenComponent } from './components/LoadingScreen';
+import { LoadingScreen } from './components/LoadingScreen';
 
-const HomePageComponet = React.lazy(() => import('./pages/home'));
+const HomePage = React.lazy(() => import('./pages/home'));
 
 export default function App() {
   return (
-    <React.Suspense fallback={<LoadingScreenComponent />}>
+    <React.Suspense fallback={<LoadingScreen />}>
       <ChakraProvider>
-        <HomePageComponet />
+        <HomePage />
       </ChakraProvider>
     </React.Suspense>
   );
