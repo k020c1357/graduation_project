@@ -21,7 +21,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'yarn'
+          cache: 'npm'
 
       - name: Install & Build
         run: |
@@ -30,6 +30,6 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_PAGE_TOKEN }}
-          branch: gh-pages
+          github_token: ${{ secrets.TOKEN_GITHUB_PAGE }}
+          branch: release
           publish_dir: ./dist
