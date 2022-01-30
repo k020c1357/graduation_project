@@ -26,7 +26,7 @@ export declare type Props = {
   inputWrongText?: String;
 };
 
-export function PrompModalComponent({
+export const PrompModalComponent = ({
   onAccept,
   onCloseModal,
   value,
@@ -37,7 +37,7 @@ export function PrompModalComponent({
   inputType = 'password',
   inputWrong = false,
   inputWrongText,
-}: Props) {
+}: Props) => {
   const inputRef = React.useRef<HTMLInputElement>(null);
 
   const handleEnter = (e: React.KeyboardEvent<HTMLDivElement>): void => {
@@ -58,7 +58,7 @@ export function PrompModalComponent({
 
         <ModalBody pb={6} onKeyDown={(e) => handleEnter(e)}>
           <Text fontSize='2xl' fontWeight='bold'>
-            {title ? title : 'Enter your secure password'}
+            {title ? title : 'アクセスコードを入力しましょう'}
           </Text>
 
           {description && <Text textColor='gray.500'>{description}</Text>}
@@ -68,7 +68,7 @@ export function PrompModalComponent({
               ref={inputRef}
               style={inputWrong ? { borderWidth: 2, borderColor: 'red' } : {}}
               type={inputType}
-              focusBorderColor={inputWrong ? 'none' : 'purple.700'}
+              focusBorderColor={inputWrong ? 'none' : 'purple.600'}
               onChange={(e) => setValue(e.target.value)}
               placeholder='abcde12345'
             />
@@ -86,15 +86,15 @@ export function PrompModalComponent({
             disabled={value.length < 1 ? true : false}
             onClick={() => onAccept(value)}
             color='white'
-            background='purple.700'
+            background='purple.600'
             mr={3}
           >
-            Continue
+            続けて
           </Button>
 
-          {isClosable && <Button onClick={onCloseModal}>Cancel</Button>}
+          {isClosable && <Button onClick={onCloseModal}>キャンセル</Button>}
         </ModalFooter>
       </ModalContent>
     </Modal>
   );
-}
+};

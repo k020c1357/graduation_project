@@ -15,8 +15,8 @@ export default function useTagCreationModal(setShowModal: Function) {
   };
 
   const handleEdit = (id: string | number) => {
-    dispatch(editTag({id: id, name: tagName, icon: tagIcon }));
-    dispatch(createNotification({ type: 'success', message: 'Tag edited successfully' }));
+    dispatch(editTag({ id: id, name: tagName, icon: tagIcon }));
+    dispatch(createNotification({ type: 'success', message: 'タグ編集しました' }));
 
     clearForm();
     setShowModal(false);
@@ -24,7 +24,7 @@ export default function useTagCreationModal(setShowModal: Function) {
 
   const handleCreate = (id: string | number) => {
     dispatch(createTag({ id: id, name: tagName, icon: tagIcon }));
-    dispatch(createNotification({ type: 'success', message: 'Tag created successfully' }));
+    dispatch(createNotification({ type: 'success', message: 'タグ作成しました' }));
 
     clearForm();
     setShowModal(false);

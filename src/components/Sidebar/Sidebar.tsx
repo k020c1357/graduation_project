@@ -2,9 +2,8 @@ import * as React from 'react';
 import { SidebarTagsGroupComponent } from './SidebarTagsGroup';
 import { Box, Button, Text } from '@chakra-ui/react';
 import { SidebarButton } from './SidebarButton';
-import { SidebarTagsCreationModalComponent } from './SidebarTagsCreationModal';
-import { SettingsModalComponent } from '../SettingsModal/SettingsModal';
-import { appVersion } from '../../core/types/commons';
+import { SidebarTagsCreationModal } from './SidebarTagsCreationModal';
+import { SettingsModal } from '../SettingsModal/SettingsModal';
 import { useDispatch } from 'react-redux';
 import { toggleSidebar } from '../../core/store/actions/sidebar';
 
@@ -34,7 +33,7 @@ export const Sidebar = ({ className }: Props) => {
   }, [showModal]);
 
   return (
-    <Box className={className} bgColor='purple.700'>
+    <Box className={className} bgColor='purple.600'>
       <Box width='100%' minWidth='100%' pr={3} pt={3}>
         <Button
           className='responsive-sidebar-close-button'
@@ -66,14 +65,12 @@ export const Sidebar = ({ className }: Props) => {
           <SidebarButton handleClick={handleSetModal} title='新しいタグを作成する' />
           <SidebarButton handleClick={handleSetConfigModal} title='設定' />
           {showModal && (
-            <SidebarTagsCreationModalComponent
+            <SidebarTagsCreationModal
               setShowModal={setShowModal}
               tagEditSelected={tagEditSelected}
             />
           )}
-          {showConfigModal && (
-            <SettingsModalComponent handleSetConfigModal={handleSetConfigModal} />
-          )}
+          {showConfigModal && <SettingsModal handleSetConfigModal={handleSetConfigModal} />}
         </Box>
       </Box>
     </Box>

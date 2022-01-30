@@ -83,7 +83,7 @@ export function PasswordCreationModalComponent({
     dispatch(
       createNotification({
         type: 'success',
-        message: passwordSelected ? 'Entry edited successfully' : 'Entry created successfully',
+        message: passwordSelected ? '編集成功' : '作成されました',
       })
     );
 
@@ -100,18 +100,18 @@ export function PasswordCreationModalComponent({
     <Modal isOpen={showModal} onClose={onClose}>
       <ModalOverlay />
       <ModalContent maxWidth={800} w='100%'>
-        <ModalHeader>{passwordSelected ? 'Entry editing' : 'Create a new entry'}</ModalHeader>
-        <ModalCloseButton color='purple.700' />
+        <ModalHeader fontWeight='medium'>{passwordSelected ? '編集' : '新規作成'}</ModalHeader>
+        <ModalCloseButton color='purple.600' />
 
         <ModalBody onKeyDown={(e) => handleEnter(e)}>
           <Box display='flex' flexDirection={`${!isLargerThan800 ? 'column' : 'row'}`}>
             <FormControl mb='5' id='name' mr={`${!isLargerThan800 ? '' : '4'}`}>
-              <FormLabel fontWeight='bold' color='gray.500'>
-                Entry name
+              <FormLabel fontWeight='medium' color='gray.600'>
+                項目名
               </FormLabel>
 
               <Input
-                focusBorderColor='purple.700'
+                focusBorderColor='purple.600'
                 placeholder='Twitter password'
                 type='text'
                 id='name'
@@ -121,12 +121,12 @@ export function PasswordCreationModalComponent({
             </FormControl>
 
             <FormControl mb='5' id='name'>
-              <FormLabel fontWeight='bold' color='gray.500'>
-                Username
+              <FormLabel fontWeight='medium' color='gray.600'>
+                ユーザ名
               </FormLabel>
 
               <Input
-                focusBorderColor='purple.700'
+                focusBorderColor='purple.600'
                 placeholder='Username'
                 type='text'
                 id='username'
@@ -138,12 +138,12 @@ export function PasswordCreationModalComponent({
 
           <Box display='flex' flexDirection={`${!isLargerThan800 ? 'column' : 'row'}`}>
             <FormControl mb='5' id='name' mr={`${!isLargerThan800 ? '' : '4'}`}>
-              <FormLabel fontWeight='bold' color='gray.500'>
-                E-mail
+              <FormLabel fontWeight='medium' color='gray.600'>
+                メール
               </FormLabel>
 
               <Input
-                focusBorderColor='purple.700'
+                focusBorderColor='purple.600'
                 placeholder='email@domain.com'
                 type='text'
                 id='email'
@@ -153,13 +153,13 @@ export function PasswordCreationModalComponent({
             </FormControl>
 
             <FormControl mb='5' id='name'>
-              <FormLabel fontWeight='bold' color='gray.500'>
-                Password
+              <FormLabel fontWeight='medium' color='gray.600'>
+                パスワード
               </FormLabel>
 
               <InputGroup size='md'>
                 <Input
-                  focusBorderColor='purple.700'
+                  focusBorderColor='purple.600'
                   type={showPassword ? 'text' : 'password'}
                   placeholder='Enter password'
                   value={password}
@@ -168,7 +168,7 @@ export function PasswordCreationModalComponent({
                 />
                 <InputRightElement width='4.5rem'>
                   <Button
-                    _focus={{ borderColor: 'purple.700' }}
+                    _focus={{ borderColor: 'purple.600' }}
                     h='1.75rem'
                     size='sm'
                     onClick={() => setShowPassword((password: boolean) => !password)}
@@ -182,8 +182,8 @@ export function PasswordCreationModalComponent({
 
           <Box display='flex' flexDirection={`${!isLargerThan800 ? 'column' : 'row'}`}>
             <FormControl mb='5' id='name' mr={`${!isLargerThan800 ? '' : '4'}`}>
-              <FormLabel fontWeight='bold' color='gray.500'>
-                Tag
+              <FormLabel fontWeight='medium' color='gray.600'>
+                タグ
               </FormLabel>
 
               <Select
@@ -202,12 +202,12 @@ export function PasswordCreationModalComponent({
             </FormControl>
 
             <FormControl mb='5' id='name'>
-              <FormLabel fontWeight='bold' color='gray.500'>
+              <FormLabel fontWeight='medium' color='gray.600'>
                 URL
               </FormLabel>
 
               <Input
-                focusBorderColor='purple.700'
+                focusBorderColor='purple.600'
                 placeholder='https://twitter.com/'
                 type='text'
                 id='url'
@@ -218,12 +218,12 @@ export function PasswordCreationModalComponent({
           </Box>
 
           <FormControl mb='5' id='name'>
-            <FormLabel fontWeight='bold' color='gray.500'>
-              Description
+            <FormLabel fontWeight='medium' color='gray.600'>
+              説明・備考
             </FormLabel>
 
             <Textarea
-              focusBorderColor='purple.700'
+              focusBorderColor='purple.600'
               placeholder='Entry description'
               id='description'
               onChange={(e) => setDescription(e.target.value)}
@@ -233,18 +233,20 @@ export function PasswordCreationModalComponent({
         </ModalBody>
 
         <ModalFooter>
-          <Button variant='ghost' color='purple.700' mr={3} onClick={onClose}>
-            Close
+          <Button variant='ghost' color='purple.600' mr={3} onClick={onClose} fontWeight='medium'>
+            閉じる
           </Button>
 
           <Button
             isDisabled={name !== '' && password !== '' ? false : true}
             onClick={handleSubmit}
             variant='solid'
-            bgColor='purple.700'
+            bgColor='purple.600'
             color='white'
+            _hover={{ color: 'purple.600', bgColor: 'gray.100' }}
+            fontWeight='medium'
           >
-            Save changes
+            保存
           </Button>
         </ModalFooter>
       </ModalContent>

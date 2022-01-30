@@ -18,21 +18,21 @@ export function AccessDeniedComponent() {
       flexDirection='column'
     >
       <Text fontWeight='bold' fontSize='xl'>
-        You do not have access to continue
+        アクセスすることはできません
       </Text>
 
       <Text textColor='gray.700' mb={5} fontSize='sm'>
-        Reload the page and try again or restore the application.
+        ページを再読み込みして再試行するか、アプリケーションを復元してください
       </Text>
 
       <Button colorScheme='red' onClick={() => setShowResetModal(true)}>
-        Restore the application
+        復元
       </Button>
 
       {showResetModal && (
         <ActionModalComponent
-          title='Restore the application'
-          description='Do you want to delete the information from this device? This action cannot be reversed'
+          title='復元する'
+          description='このデバイスから情報を削除しますか？この操作は取り消すことができません'
           onAccept={resetApp}
           onClose={() => setShowResetModal(false)}
         />

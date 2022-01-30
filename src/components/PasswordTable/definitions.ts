@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from 'react';
-import { TagState, PasswordState, Password } from '../../core/types/reducers';
+import type { TagState, PasswordState, Password } from '../../core/types/reducers';
 
 export type Props = {
   TAG_STATE: TagState;

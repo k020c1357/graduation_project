@@ -25,7 +25,7 @@ type Props = {
   setShowModal: (state: boolean) => void;
 };
 
-export function SidebarTagsCreationModalComponent({ tagEditSelected, setShowModal }: Props) {
+export const SidebarTagsCreationModal = ({ tagEditSelected, setShowModal }: Props) => {
   const { setTagIcon, setTagName, tagIcon, tagName, handleCreate, handleEdit } =
     useTagCreationModal(setShowModal);
 
@@ -45,17 +45,17 @@ export function SidebarTagsCreationModalComponent({ tagEditSelected, setShowModa
     <Modal isOpen={true} onClose={onClose}>
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader>{tagEditSelected ? 'Tag editing' : 'Create a new tag'}</ModalHeader>
-        <ModalCloseButton color='purple.700' />
+        <ModalHeader>{tagEditSelected ? 'タグの編集' : 'タグの新規作成'}</ModalHeader>
+        <ModalCloseButton color='purple.600' />
 
         <ModalBody>
           <FormControl mb='5' id='name'>
             <FormLabel fontWeight='bold' color='gray.500'>
-              Tag name
+              タグ名
             </FormLabel>
 
             <Input
-              focusBorderColor='purple.700'
+              focusBorderColor='purple.600'
               placeholder='Social, Job, etc...'
               type='text'
               onChange={(e) => setTagName(e.target.value)}
@@ -87,21 +87,23 @@ export function SidebarTagsCreationModalComponent({ tagEditSelected, setShowModa
         </ModalBody>
 
         <ModalFooter>
-          <Button variant='ghost' color='purple.700' mr={3} onClick={onClose}>
-            Close
+          <Button variant='ghost' color='purple.600' mr={3} onClick={onClose} fontWeight={'medium'}>
+            閉じる
           </Button>
 
           <Button
             isDisabled={tagName !== '' && tagIcon !== '' ? false : true}
             onClick={handleSubmit}
             variant='solid'
-            bgColor='purple.700'
+            bgColor='purple.600'
             color='white'
+            _hover={{ color: 'purple.600', bgColor: 'gray.100' }}
+            fontWeight='medium'
           >
-            Save changes
+            保存
           </Button>
         </ModalFooter>
       </ModalContent>
     </Modal>
   );
-}
+};

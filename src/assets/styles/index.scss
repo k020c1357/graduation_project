@@ -80,6 +80,15 @@ body {
   transition: all 0.3s ease;
 }
 
+.app-search-icon {
+  width: 20px;
+  height: 20px;
+
+  path {
+    fill: #718096;
+  }
+}
+
 .app-icon-table-size {
   width: 20px;
   height: 20px;
@@ -96,6 +105,18 @@ body {
       opacity: 1;
     }
   }
+}
+
+// flex flex-col flex-grow border-4
+// border-gray-400 border-dotted
+// bg-white rounded mt-4 mx-3
+
+.main-container {
+  margin: 1rem 1rem;
+  border: 0.25rem;
+  border-color: gray;
+  border-style: dotted;
+  border-radius: 1rem;
 }
 
 .selected {

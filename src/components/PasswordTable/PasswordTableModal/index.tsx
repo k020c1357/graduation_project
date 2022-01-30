@@ -8,8 +8,8 @@ import {
   Text,
   Box,
 } from '@chakra-ui/react';
-import { Password } from '../../../core/types/reducers';
-import PasswordTableModalItemComponent from '../PasswordTableModalItem';
+import type { Password } from '../../../core/types/reducers';
+import PasswordTableModalItem from '../PasswordTableModalItem';
 import useClipboard from '../../../hooks/useClipboard';
 
 type Props = {
@@ -17,11 +17,11 @@ type Props = {
   password: Password;
 };
 
-export default function PasswordTableModalComponent({ handleClose, password }: Props) {
+export default function PasswordTableModal({ handleClose, password }: Props) {
   const { handleClipboard } = useClipboard();
 
   return (
-    <Modal isOpen={true} onClose={handleClose}>
+    <Modal isOpen={true} onClose={handleClose} size={'3xl'}>
       <ModalOverlay />
       <ModalContent>
         <ModalHeader display='flex'>
@@ -43,29 +43,29 @@ export default function PasswordTableModalComponent({ handleClose, password }: P
         <ModalBody>
           <Box mb={3}>
             <Text color='gray.500'>
-              {password.description ? password.description : 'No description here. '}
+              {password.description ? password.description : 'ここに記載はありません'}
             </Text>
           </Box>
 
-          <PasswordTableModalItemComponent
-            fieldType='Email'
+          <PasswordTableModalItem
+            fieldType='メール'
             handleClipboard={handleClipboard}
             fieldValue={password.email}
           />
 
-          <PasswordTableModalItemComponent
-            fieldType='Username'
+          <PasswordTableModalItem
+            fieldType='ユーザ名'
             handleClipboard={handleClipboard}
             fieldValue={password.username}
           />
 
-          <PasswordTableModalItemComponent
-            fieldType='Password'
+          <PasswordTableModalItem
+            fieldType='パスワード'
             handleClipboard={handleClipboard}
             fieldValue={password.password}
           />
 
-          <PasswordTableModalItemComponent
+          <PasswordTableModalItem
             fieldType='URL'
             handleClipboard={handleClipboard}
             fieldValue={password.url}

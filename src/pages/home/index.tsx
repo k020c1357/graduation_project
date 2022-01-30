@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Layout } from '../../layouts/Layout';
 import type { NotificationState, UserState } from '../../core/types/reducers';
+import { Box, Text } from '@chakra-ui/react';
 import { connect } from 'react-redux';
 import { useNotification } from '../../hooks/useNotification';
 import { PasswordDatatableComponent as PasswordDatatable } from '../../components/PasswordDatatable';
@@ -46,6 +47,9 @@ function HomePage({ NOTIFICATIONS_STATE, USER_STATE }: Props) {
               setShowModal={setShowModal}
               setSelectedPassword={setSelectedPassword}
             />
+            <Box mt={8} mb={4} display='flex' justifyContent='center' alignItem='center'>
+              <Text>© AI01-2 卒業制作 01グループ. 2022 All rights reserved. </Text>
+            </Box>
           </>
         </Layout>
       ) : (

@@ -9,7 +9,14 @@ export const Layout = (props: Props) => {
   const showSidebar = useSelector((state: any) => state.sidebar.showSidebar);
 
   return (
-    <Container className='full-container' minWidth='full' mx={0} px={0} minheight='full'>
+    <Container
+      className='full-container'
+      minWidth='full'
+      mx={0}
+      px={0}
+      minheight='full'
+      bgColor='gray.100'
+    >
       <Sidebar className={`app-sidebar ${showSidebar ? 'active' : ''}`} />
       <Box className={`app-content`}>{props.children}</Box>
     </Container>

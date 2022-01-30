@@ -34,8 +34,8 @@ export const Auth = () => {
       {showPasswordCreationModal && (
         <PrompModalComponent
           isClosable={false}
-          title='Creating an access code'
-          description='Welcome, to start you must create an access code'
+          title='アクセスコードの作成'
+          description='ようこそ、まずはアクセスコードの作成が必要です'
           onAccept={generatePassword}
           onCloseModal={() => false}
           value={inputPassword}
@@ -46,13 +46,13 @@ export const Auth = () => {
 
       {showCheckAccessModal && (
         <PrompModalComponent
-          title='Login'
-          description='Enter your access code to continue 🔒'
+          title='ログイン'
+          description='アクセスコードを入力し、次へ進む'
           onAccept={checkUserAccess}
           onCloseModal={() => (setShowCheckAccessModal(false), setAccessDenied(true))}
           value={inputPassword}
           inputWrong={passwordWrong}
-          inputWrongText='Your access code is wrong. Try again.'
+          inputWrongText='アクセスコードが間違っています。もう一度試してください'
           setValue={setInputPassword}
         />
       )}

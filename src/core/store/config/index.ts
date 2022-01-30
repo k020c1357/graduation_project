@@ -24,8 +24,7 @@ const persistConfig = {
   whitelist: ['tags', 'passwords', 'userPassword'],
   transforms: [
     encryptTransform({
-      secretKey:
-        import.meta.env.VITE_SECRET_STATE_PASS ?? 'YOUR_SECRET_PASSWORD',
+      secretKey: 'PASSWORD',
       onError: function (err: any) {
         console.log('ERROR ON ENCRYPT THE STATE', err);
       },
@@ -47,8 +46,7 @@ const persistedReducer = persistReducer(persistConfig, reducers);
 
 export function configureStore() {
   // https://github.com/zalmoxisus/redux-devtools-extension#12-advanced-store-setup
-  const composeEnhancers =
-    window?.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+  const composeEnhancers = window?.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
   const store: any = createStore(persistedReducer, compose(composeEnhancers()));
   const persistor = persistStore(store);

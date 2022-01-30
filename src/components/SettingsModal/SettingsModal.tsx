@@ -5,14 +5,10 @@ type Props = {
   handleSetConfigModal: Function;
 };
 
-export function SettingsModalComponent({ handleSetConfigModal }: Props) {
+export const SettingsModal = ({ handleSetConfigModal }: Props) => {
   const handleClose = () => {
     handleSetConfigModal(false);
   };
-
-  // const handleSubmit = () => {
-  //   handleSetConfigModal(false);
-  // };
 
   return (
     <Modal isOpen={true} onClose={handleClose}>
@@ -22,12 +18,17 @@ export function SettingsModalComponent({ handleSetConfigModal }: Props) {
           <SettingsModalContentComponent />
 
           <Box width='100%' minWidth='100%' textAlign='right' px={3} pb={3}>
-            <Button display='inline-block' background='ghost' onClick={handleClose}>
-              Close settings
+            <Button
+              display='inline-block'
+              background='ghost'
+              onClick={handleClose}
+              fontWeight={'medium'}
+            >
+              閉じる
             </Button>
           </Box>
         </ModalBody>
       </ModalContent>
     </Modal>
   );
-}
+};

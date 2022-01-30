@@ -8,7 +8,7 @@ type Props = {
   showClipboardButton?: Boolean;
 };
 
-export default function PasswordTableModalItemComponent({
+export default function PasswordTableModalItem({
   fieldType,
   fieldValue,
   handleClipboard,

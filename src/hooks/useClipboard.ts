@@ -9,17 +9,21 @@ export default function useClipboard() {
 
     try {
       navigator.clipboard.writeText(entry);
-      dispatch(createNotification({
-        type: 'success',
-        message: 'Credential copied to your clipboard',
-      }));
+      dispatch(
+        createNotification({
+          type: 'success',
+          message: 'クリップボードにコピーされた',
+        })
+      );
     } catch (error) {
       console.error(error);
 
-      dispatch(createNotification({
-        type: 'error',
-        message: 'Credential was not copied to your clipboard',
-      }));
+      dispatch(
+        createNotification({
+          type: 'error',
+          message: 'クリップボードにコピーされていません',
+        })
+      );
     }
   };
 

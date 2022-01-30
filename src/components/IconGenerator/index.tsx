@@ -20,7 +20,7 @@ function checkIconIntegrity(type: string) {
   }
 }
 
-export function IconGenerator({ type, sizeClass }: Props) {
+export const IconGenerator = ({ type, sizeClass }: Props) => {
   checkIconIntegrity(type);
 
   if (type === 'all') {
@@ -239,4 +239,4 @@ export function IconGenerator({ type, sizeClass }: Props) {
       />
     </svg>
   );
-}
+};

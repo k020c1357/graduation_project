@@ -59,10 +59,10 @@ export function ConfirmActionModalComponent({
         <AlertDialogBody>{description ? description : ''}</AlertDialogBody>
         <AlertDialogFooter>
           <Button ref={undefined} onClick={handleCancel}>
-            Cancel
+            キャンセル
           </Button>
           <Button onClick={handleOK} colorScheme={colorScheme} ml={3}>
-            Confirm
+            確認
           </Button>
         </AlertDialogFooter>
       </AlertDialogContent>

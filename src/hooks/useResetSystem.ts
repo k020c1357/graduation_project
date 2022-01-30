@@ -8,13 +8,15 @@ export function useResetSystem() {
     let counter = 6;
     window.localStorage.removeItem('persist:root');
 
-    dispatch(createNotification({ type: 'success', message: 'Application restored successfully' }));
+    dispatch(createNotification({ type: 'success', message: '復元しました' }));
 
     setInterval(() => {
       if (counter <= 1) return window.location.reload();
 
       counter--;
-      return dispatch(createNotification({ type: 'warning', message: `Reloading app in ${counter}` }));
+      return dispatch(
+        createNotification({ type: 'warning', message: `${counter}秒でリロードします` })
+      );
     }, 1000);
   };
 
