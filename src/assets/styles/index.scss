@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;400;500&family=Outfit:wght@200;300;400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', 'Kiwi Maru', serif, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #e4e9f7;
+  transition: all 0.3s ease;
+}
+
+.app-sidebar {
+  max-width: 320px;
+  width: 320px;
+  height: 100vh;
+  overflow-y: auto;
+  float: left;
+  width: 0;
+  overflow: hidden;
+  left: -100%;
+  position: relative;
+  z-index: 1000;
+  transition: all 0.3s ease;
+
+  .responsive-sidebar-close-button {
+    display: none;
+  }
+
+  @media (max-width: 860px) {
+    & {
+      position: absolute;
+      max-width: 100%;
+      width: 100%;
+      height: 100%;
+      z-index: 1000;
+    }
+
+    .responsive-sidebar-close-button {
+      display: block;
+      text-align: right;
+    }
+  }
+
+  &.active {
+    left: 0;
+    width: 100%;
+  }
+}
+
+.full-container {
+  @media (min-width: 768px) {
+    .app-sidebar.active ~ .app-content {
+      width: calc(100% - 320px);
+      min-width: calc(100% - 320px);
+      transition: all 0.3s ease;
+    }
+  }
+}
+
+.app-content {
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  transition: all 0.3s ease;
+}
+
+.app-divider {
+  margin: 2.2rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.089);
+  transition: all 0.3s ease;
+}
+
+.app-nav-icon {
+  width: 25px;
+  height: 25px;
+  transition: all 0.3s ease;
+}
+
+.app-search-icon {
+  width: 20px;
+  height: 20px;
+
+  path {
+    fill: #718096;
+  }
+}
+
+.app-icon-table-size {
+  width: 20px;
+  height: 20px;
+  transition: all 0.3s ease;
+}
+
+.app-box-item {
+  .app-right-item {
+    opacity: 0;
+  }
+
+  &:hover {
+    .app-right-item {
+      opacity: 1;
+    }
+  }
+}
+
+// flex flex-col flex-grow border-4
+// border-gray-400 border-dotted
+// bg-white rounded mt-4 mx-3
+
+.main-container {
+  margin: 1rem 1rem;
+  border: 0.25rem;
+  border-color: gray;
+  border-style: dotted;
+  border-radius: 1rem;
+}
+
+.selected {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.scroll-style::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.151);
+  border-radius: 10px;
+}
+
+.scroll-style::-webkit-scrollbar {
+  width: 12px;
+  background-color: none;
+}
+
+.scroll-style::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.342);
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.651);
+  }
+}
+
+@media (max-width: 1200px) {
+  .md-column {
+    flex-direction: column !important;
+  }
+}
