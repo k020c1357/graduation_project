@@ -31,12 +31,12 @@ export function SidebarTagsMenuComponent({ handleDeleteTag, tag, handleTagEditSe
       </MenuButton>
 
       <MenuList color='black'>
-        <MenuItem fontWeight='bold' onClick={() => handleTagEditSelected(tag)}>
-          Edit
+        <MenuItem fontWeight='medium' onClick={() => handleTagEditSelected(tag)}>
+          編集
         </MenuItem>
 
-        <MenuItem fontWeight='bold' onClick={() => handleDeleteTag(tag)}>
-          Delete
+        <MenuItem fontWeight='medium' onClick={() => handleDeleteTag(tag)}>
+          削除
         </MenuItem>
       </MenuList>
     </Menu>
