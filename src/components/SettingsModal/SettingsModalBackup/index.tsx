@@ -88,7 +88,7 @@ export function SettingsModalBackupModal({ TAGS, PASSWORDS }: Props) {
 
           <Button
             background='gray.300'
-            maxWidth='150px'
+            maxWidth='200px'
             width='100%'
             disabled={file ? false : true}
             onClick={handleImportFile}

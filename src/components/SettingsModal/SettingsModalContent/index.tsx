@@ -14,21 +14,21 @@ export function SettingsModalContentComponent() {
         <SettingsModalContentOptionComponent
           selectedTab={selectedTab}
           setSelectedTab={setSelectedTab}
-          optionName='Backup'
+          optionName='バックアップ'
           optionValue='backup'
         />
 
         <SettingsModalContentOptionComponent
           selectedTab={selectedTab}
           setSelectedTab={setSelectedTab}
-          optionName='User'
+          optionName='ユーザー'
           optionValue='user'
         />
 
         <SettingsModalContentOptionComponent
           selectedTab={selectedTab}
           setSelectedTab={setSelectedTab}
-          optionName='System settings'
+          optionName='システム設定'
           optionValue='system'
         />
       </Box>
