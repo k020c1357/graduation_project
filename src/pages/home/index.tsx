@@ -47,8 +47,8 @@ function HomePage({ NOTIFICATIONS_STATE, USER_STATE }: Props) {
               setShowModal={setShowModal}
               setSelectedPassword={setSelectedPassword}
             />
-            <Box mt={8} mb={4} display='flex' justifyContent='center' alignItem='center'>
-              <Text>© AI01-2 卒業制作 01グループ. 2022 All rights reserved. </Text>
+            <Box mt={10} mb={6} display='flex' justifyContent='center' alignItem='center'>
+              <Text fontWeight={'medium'}>AI01-2 卒業制作 01グループ. © 2022 </Text>
             </Box>
           </>
         </Layout>

@@ -43,9 +43,10 @@ const ActionsHeader = ({
         justifyContent='space-between'
         flexDirection='row'
         backgroundColor='gray.100'
-        p={4}
+        px={7}
+        py={4}
       >
-        <Box display='flex' mb={6}>
+        <Box display='flex' mb={1}>
           <Button
             mr={4}
             color='purple.800'

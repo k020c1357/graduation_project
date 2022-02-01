@@ -30,11 +30,11 @@ export function ActionModalComponent({ onClose, onAccept, title, description }: 
 
         <ModalFooter>
           <Button colorScheme='red' mr={3} onClick={() => onClose()}>
-            Close
+            閉じる
           </Button>
 
           <Button variant='ghost' onClick={() => onAccept()}>
-            Accept
+            確認
           </Button>
         </ModalFooter>
       </ModalContent>

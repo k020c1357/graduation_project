@@ -57,7 +57,7 @@ export const Sidebar = ({ className }: Props) => {
 
       <hr className='app-divider' />
 
-      <Box display='flex' justifyContent='space-between' flexDirection='column' minHeight='80vh'>
+      <Box display='flex' justifyContent='space-between' flexDirection='column' minHeight='65vh'>
         <Box>
           <SidebarTagsGroupComponent handleTagEditSelected={handleTagEditSelected} />
         </Box>

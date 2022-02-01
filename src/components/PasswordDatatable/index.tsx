@@ -25,7 +25,7 @@ const PasswordDatatable = ({
   setShowModal,
 }: Props) => {
   return (
-    <Container className='main-container' minHeight='75vh' minWidth='calc(100% - 80px)' mx='auto'>
+    <Container className='main-container' minHeight='70vh' minWidth='calc(100% - 80px)' mx='auto'>
       {PASSWORD_STATE.passwords?.length ? (
         <PasswordTableComponent
           setShowModal={setShowModal}
