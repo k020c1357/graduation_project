@@ -26,7 +26,7 @@ export function SettingsModalUserComponent() {
       dispatch(
         createNotification({
           type: 'success',
-          message: 'Access code updated successfully',
+          message: 'アクセスコードの更新に成功',
         })
       );
 
@@ -37,7 +37,7 @@ export function SettingsModalUserComponent() {
     return dispatch(
       createNotification({
         type: 'error',
-        message: 'The current access code does not match',
+        message: '現在のアクセスコードが一致しない',
       })
     );
   };
@@ -45,13 +45,13 @@ export function SettingsModalUserComponent() {
   return (
     <Box>
       <Box background='gray.100' borderRadius='lg' p={4}>
-        <Text fontWeight='bold' fontSize='xl' mb={3}>
-          Update the access code
+        <Text fontWeight='medium' fontSize='xl' mb={3}>
+          アクセスコードを更新する
         </Text>
 
         <Box>
           <FormControl>
-            <Text>Current password</Text>
+            <Text>現在のアクセスコード</Text>
             <Input
               style={passwordMismatch ? { borderWidth: 2, borderColor: 'red' } : {}}
               focusBorderColor={passwordMismatch ? 'none' : 'purple.600'}
@@ -59,13 +59,13 @@ export function SettingsModalUserComponent() {
               autoComplete='off'
               type='password'
               value={password}
-              placeholder='Silence is golden'
+              placeholder='Old'
               background='white'
             />
           </FormControl>
 
           <FormControl mt={3}>
-            <Text>New password</Text>
+            <Text>新しいアクセスコード</Text>
             <Input
               style={passwordMismatch ? { borderWidth: 2, borderColor: 'red' } : {}}
               focusBorderColor={passwordMismatch ? 'none' : 'purple.600'}
@@ -73,13 +73,13 @@ export function SettingsModalUserComponent() {
               value={newPassword}
               autoComplete='off'
               type='password'
-              placeholder='New password'
+              placeholder='New'
               background='white'
             />
           </FormControl>
 
           <Button mt={5} onClick={updatePassword} background='gray.300'>
-            Update changes
+            アップデート
           </Button>
         </Box>
       </Box>

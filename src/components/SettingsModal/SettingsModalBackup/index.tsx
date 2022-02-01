@@ -40,41 +40,46 @@ export function SettingsModalBackupModal({ TAGS, PASSWORDS }: Props) {
       if (!result) {
         setUploadError(true);
         return dispatch(
-          createNotification({ type: 'error', message: 'Error on import the backup file' })
+          createNotification({
+            type: 'error',
+            message: 'バックアップファイルのインポートでエラーが発生する',
+          })
         );
       }
 
       importTags(result?.tags);
       importPasswords(result?.passwords);
-      dispatch(createNotification({ type: 'success', message: 'Backup uploaded successfully' }));
+      dispatch(
+        createNotification({ type: 'success', message: 'バックアップのアップロードに成功' })
+      );
     });
   };
 
   return (
     <Box>
       <Box background='gray.100' borderRadius='lg' p={4}>
-        <Text fontWeight='bold' fontSize='xl'>
-          Generate a backup
+        <Text fontWeight='medium' fontSize='xl'>
+          バックアップを生成する
         </Text>
 
         <Text mb={4} textColor='gray.500'>
-          Download a backup of your credentials
+          パスワードのバックアップをダウンロードする
         </Text>
 
         <Button background='gray.300' onClick={() => exportAsJSONFile(TAGS, PASSWORDS)}>
-          Download
+          ダウンロード
         </Button>
       </Box>
 
       <Box background='gray.100' borderRadius='lg' p={4} mt={2}>
-        <Text fontWeight='bold' fontSize='xl'>
-          Import backup
+        <Text fontWeight='medium' fontSize='xl'>
+          インポートバックアップ
         </Text>
-        <Text textColor='gray.500'>Import your backup of your passwords.</Text>
+        <Text textColor='gray.500'>パスワードのバックアップをインポートする</Text>
 
         {uploadError && (
-          <Text color='red.700' fontWeight='bold' fontSize='xs'>
-            An error occurred while trying to upload the file. Try again.
+          <Text color='red.700' fontWeight='medium' fontSize='xs'>
+            ファイルをアップロードしようとしたときにエラーが発生しました。もう一度やり直してください
           </Text>
         )}
 
@@ -88,7 +93,7 @@ export function SettingsModalBackupModal({ TAGS, PASSWORDS }: Props) {
             disabled={file ? false : true}
             onClick={handleImportFile}
           >
-            Import backup
+            インポートバックアップ
           </Button>
         </Box>
       </Box>
